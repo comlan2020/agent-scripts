@@ -1,0 +1,19 @@
+#!/bin/bash
+
+echo "starting apache server installation, this will take a few min..." 
+
+yum install wget httpd -y
+systemctl status httpd
+systemctl start httpd
+systemctl enable httpd
+firewall-cmd --permanent --add-port=80/tcp
+ firewall-cmd --reload
+ if [ $? -eq 0 ]
+ then
+
+ echo "your apache server has been successfully INSTALLED"
+else
+
+echo "apache installation has failed, please check the commands and try again"
+
+fi

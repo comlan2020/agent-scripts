@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "starting packages installation, this will take a few min..."
+yum install wget net-utils sysstat finger gcc make python3 epel-release git vim -y
+if [ $? -eq 0 ] 
+then
+echo "Packages have been successfully installed"
+else
+echo "packages installation FAILED"
+fi
